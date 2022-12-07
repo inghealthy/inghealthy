@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+}
+
+.texto{
+    margin: 30px auto;
+    width: 80%;
+}
+
+.texto p, h1{
+    margin-bottom: 30px;
+}
+
+.texto p{
+    font-size: 20px;
+}
+
+.btn-abrir{
+    background: #0063a5;
+    color:#fff;
+    padding: 10px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+/* VENTANA MODAL */
+
+.pop-up{
+    background: rgba(48, 48, 48, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.pop-up-wrap{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 950px;
+    transform: scale(0.6);
+    opacity: 0;
+    transition: .3s ease all;
+}
+
+.pop-up-title{
+    flex-basis: 0;
+    flex-grow:1.5;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('../img/office.jpg');
+    background-size: 165%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pop-up-title::after{
+    content: '';
+    position: absolute;
+    
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.pop-up-title::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.subcription::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.pop-up-title h2,
+.pop-up-title p{
+    z-index: 10;
+    color: #fff;
+}
+
+.pop-up-title h2{
+    font-family: 'Technoma';
+    font-size: 80px;
+}
+
+
+.pop-up-title p{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.subcription{
+    background: #fff;
+    flex-basis: 0;
+    flex-grow: 2;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.sub-content{
+    width: 75%;
+}
+
+.sub-content h2{
+    font-weight: 500;
+    font-size: 40px;
+    color: #1F4068;
+    margin-bottom: 15px;
+}
+
+.sub-content p{
+    font-weight: 500;
+    color: #1bc59b;
+    margin-bottom: 30px;
+}
+
+.subs-email{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #ccc;
+    margin-bottom: 15px;
+}
+
+.subs-send{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #007BFF;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: .25s ease background;
+}
+
+.subs-send:hover{
+    background: #1bc59b;
+}
+
+.line{
+    width: 100%;
+    height: 20px;
+    background: #1F4068;
+}
+
+#close{
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    font-size: 25px;
+    color: #1bc59b;
+    cursor: pointer;
+}
+
+.pop-up.show{
+    visibility: visible;
+}
+
+.pop-up-wrap.show{
+    transform: scale(1);
+    opacity: 1;
+}
+
+@media only screen and (max-width: 980px){
+    .pop-up-title{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 320px){
+    .sub-content h2{
+        font-size: 30px;
+    }
